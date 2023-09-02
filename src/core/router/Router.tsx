@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 
 const BalanceModule = lazy(
 	() => import("../../app/modules/BalanceModule/BalanceModule")
@@ -12,6 +12,10 @@ const StepperModule = lazy(
 const CoreRouter = createBrowserRouter([
 	{
 		path: "/",
+		element: <Navigate to="/coffee.balance" />,
+	},
+	{
+		path: "/coffee.balance/",
 		element: (
 			<Suspense fallback={<>loading</>}>
 				<BalanceModule />
@@ -19,7 +23,7 @@ const CoreRouter = createBrowserRouter([
 		),
 	},
 	{
-		path: "/stepper",
+		path: "/coffee.balance/stepper",
 		element: (
 			<Suspense fallback={<>loading</>}>
 				<StepperModule />

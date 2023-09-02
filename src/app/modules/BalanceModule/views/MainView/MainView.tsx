@@ -62,7 +62,7 @@ const MainView: React.FC = () => {
 				JSON.stringify({ recipeName: recipe.name, data })
 			);
 
-			navigate("/stepper");
+			navigate("/coffee.balance/stepper");
 		}
 	};
 
