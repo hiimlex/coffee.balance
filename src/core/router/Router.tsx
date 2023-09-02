@@ -12,10 +12,6 @@ const StepperModule = lazy(
 const CoreRouter = createBrowserRouter([
 	{
 		path: "/",
-		element: <Navigate to="/coffee-balance" />,
-	},
-	{
-		path: "/coffee-balance",
 		element: (
 			<Suspense fallback={<>loading</>}>
 				<BalanceModule />

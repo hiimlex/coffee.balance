@@ -33,7 +33,7 @@ const StepperView: React.FC<IStepperViewProps> = ({ recipe, data }) => {
 	};
 
 	const goBack = () => {
-		navigate("/coffee-balance");
+		navigate("/");
 	};
 
 	return (
