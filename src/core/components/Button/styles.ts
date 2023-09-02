@@ -17,8 +17,22 @@ export const StyledButton = styled.button<{ variant?: IButtonTheme }>`
 		color: ${theme.colors.white1};
 	`}
 
-	&:hover {
+	&:hover, &:active {
 		cursor: pointer;
-		opacity: 0.92;
+		transform: scale(1.02);
+	}
+
+	&:focus {
+		outline: 2px solid ${({ theme }) => theme.colors.black1};
+	}
+
+	&:disabled {
+		background-color: ${({ theme }) => theme.colors.disabled};
+		color: ${({ theme }) => theme.colors.black1};
+
+		&:hover {
+			transform: none;
+			cursor: not-allowed;
+		}
 	}
 `;

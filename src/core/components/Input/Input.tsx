@@ -1,8 +1,14 @@
 import { forwardRef } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
-import { StyledInput, StyledInputGroup, StyledInputSuffix } from "./styles";
+import {
+	StyledInput,
+	StyledInputGroup,
+	StyledInputPrefix,
+	StyledInputSuffix,
+} from "./styles";
 
 interface IInputProps {
+	prefix?: string;
 	suffix?: string;
 	width?: React.CSSProperties["width"];
 	inputProps?: React.DetailedHTMLProps<
@@ -13,12 +19,14 @@ interface IInputProps {
 }
 
 const Input = forwardRef<HTMLInputElement, IInputProps>(
-	({ suffix, width, inputProps, register }, ref) => (
+	({ prefix, suffix, width, inputProps, register }, ref) => (
 		<StyledInputGroup style={{ width }}>
+			{prefix && <StyledInputPrefix>{prefix}</StyledInputPrefix>}
 			<StyledInput
 				{...inputProps}
 				style={{ ...inputProps?.style, width }}
 				ref={ref}
+				className={prefix ? "with-prefix" : ""}
 				{...register}
 			/>
 			{suffix && <StyledInputSuffix>{suffix}</StyledInputSuffix>}

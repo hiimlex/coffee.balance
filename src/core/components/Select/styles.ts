@@ -15,6 +15,7 @@ export const StyledSelect = styled.select`
 	outline: none;
 	font-size: 14px;
 	font-weight: 500;
+	height: 40px;
 
 	padding: 10px 12px;
 
@@ -22,6 +23,10 @@ export const StyledSelect = styled.select`
 
 	&:hover {
 		cursor: pointer;
+	}
+
+	&:focus {
+		outline: 2px solid ${({ theme }) => theme.colors.black1};
 	}
 `;
 

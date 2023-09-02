@@ -1,4 +1,21 @@
-const theme = {
+export interface IThemeType {
+	colors: {
+		background: string;
+		brown1: string;
+		brown2: string;
+		brown3: string;
+		brown4: string;
+		purple1: string;
+		purple2: string;
+		black1: string;
+		white1: string;
+		nude1: string;
+		nude2: string;
+		disabled: string;
+	};
+}
+
+const theme: IThemeType = {
 	colors: {
 		background: "#A4745C",
 		brown1: "#cd9f8f",
@@ -11,6 +28,7 @@ const theme = {
 		white1: "#fefefe",
 		nude1: "#eae1db",
 		nude2: "#ad988f",
+		disabled: "#6e594e",
 	},
 };
 

@@ -1,14 +1,24 @@
+import { IMakeRecipeDataDTO, IRecipeDTO } from "@/app/api";
 import {
 	CoreButton,
 	CoreHeader,
 	CoreInput,
 	CoreSelect,
+	CoreSelectRecipe,
 } from "@/core/components";
-import { StyledMainViewContainer, StyledMainViewForm } from "./styles";
+import {
+	AppDispatch,
+	RECIPE_MAKER_LOCALSTORAGE_KEY,
+	generateRecipeStepper,
+} from "@/core/store";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { StyledMainViewContainer, StyledMainViewForm } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const MainView: React.FC = () => {
-	const { register, getValues } = useForm({
+	const { register, getValues, formState, trigger } = useForm({
 		mode: "all",
 		defaultValues: {
 			method: "",
@@ -16,9 +26,44 @@ const MainView: React.FC = () => {
 			ratio: "",
 		},
 	});
+	const [recipe, setRecipe] = useState<IRecipeDTO | undefined>();
+	const navigate = useNavigate();
+
+	const dispath = useDispatch<AppDispatch>();
+
+	const handleSelectRecipe = (recipe: IRecipeDTO) => {
+		trigger("grounds");
+		trigger("ratio");
+		trigger("method");
+
+		setRecipe(recipe);
+	};
 
 	const handleGenerate = () => {
-		console.log("generate", getValues());
+		const { grounds, method, ratio } = getValues();
+
+		const data: IMakeRecipeDataDTO = {
+			method,
+			blooming: true,
+			grounds: parseInt(grounds),
+			ratio: parseInt(ratio),
+		};
+
+		if (recipe) {
+			dispath(
+				generateRecipeStepper({
+					recipe,
+					data,
+				})
+			);
+
+			localStorage.setItem(
+				RECIPE_MAKER_LOCALSTORAGE_KEY,
+				JSON.stringify({ recipeName: recipe.name, data })
+			);
+
+			navigate("/stepper");
+		}
 	};
 
 	return (
@@ -28,24 +73,26 @@ const MainView: React.FC = () => {
 			<StyledMainViewForm>
 				<CoreInput
 					inputProps={{
-						type: "text",
+						type: "number",
 						placeholder: "coffee grounds",
 					}}
 					width="100%"
 					suffix="g"
-					register={register("grounds", { required: true })}
+					register={register("grounds", { required: true, min: 1 })}
 				/>
+
 				<CoreInput
 					inputProps={{
-						type: "text",
+						type: "number",
 						placeholder: "ratio",
 					}}
+					prefix="1:"
 					width="100%"
 					suffix="g:ml"
-					register={register("ratio", { required: true })}
+					register={register("ratio", { required: true, min: 1 })}
 				/>
 				<CoreSelect
-					placeholder="method"
+					placeholder="brew method"
 					options={[
 						{
 							label: "v60",
@@ -56,7 +103,16 @@ const MainView: React.FC = () => {
 					register={register("method", { required: true })}
 				/>
 
-				<CoreButton variant="primary" onClick={handleGenerate}>
+				<CoreSelectRecipe
+					selectedRecipeName={recipe?.name}
+					onSelectRecipe={handleSelectRecipe}
+				/>
+
+				<CoreButton
+					disabled={!recipe || !formState.isValid}
+					variant="primary"
+					onClick={handleGenerate}
+				>
 					generate
 				</CoreButton>
 			</StyledMainViewForm>

@@ -5,7 +5,9 @@ import {
 	StyledHeaderLogoBold,
 } from "./styles";
 
-const Header: React.FC = () => (
+interface IHeaderProps {}
+
+const Header: React.FC<IHeaderProps> = () => (
 	<StyledHeader>
 		<StyledHeaderLogo>
 			<StyledHeaderLogoBold>Coffee.</StyledHeaderLogoBold>
