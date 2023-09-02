@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 const BalanceModule = lazy(
 	() => import("../../app/modules/BalanceModule/BalanceModule")
