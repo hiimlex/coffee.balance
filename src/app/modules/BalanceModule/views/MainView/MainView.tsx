@@ -3,7 +3,6 @@ import {
 	CoreButton,
 	CoreHeader,
 	CoreInput,
-	CoreSelect,
 	CoreSelectRecipe,
 } from "@/core/components";
 import {
@@ -14,14 +13,13 @@ import {
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { StyledMainViewContainer, StyledMainViewForm } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { StyledMainViewContainer, StyledMainViewForm } from "./styles";
 
 const MainView: React.FC = () => {
-	const { register, getValues, formState, trigger } = useForm({
+	const { register, getValues, setValue, formState, trigger } = useForm({
 		mode: "all",
 		defaultValues: {
-			method: "",
 			grounds: "",
 			ratio: "",
 		},
@@ -34,16 +32,15 @@ const MainView: React.FC = () => {
 	const handleSelectRecipe = (recipe: IRecipeDTO) => {
 		trigger("grounds");
 		trigger("ratio");
-		trigger("method");
 
 		setRecipe(recipe);
+		setValue("ratio", recipe.recommendedRatio.toString());
 	};
 
 	const handleGenerate = () => {
-		const { grounds, method, ratio } = getValues();
+		const { grounds, ratio } = getValues();
 
 		const data: IMakeRecipeDataDTO = {
-			method,
 			blooming: true,
 			grounds: parseInt(grounds),
 			ratio: parseInt(ratio),
@@ -72,26 +69,39 @@ const MainView: React.FC = () => {
 
 			<StyledMainViewForm>
 				<CoreInput
-					inputProps={{
-						type: "number",
-						placeholder: "coffee grounds",
-					}}
+					inputProps={
+						{
+							type: "number",
+							placeholder: "coffee grounds",
+							pattern: "[0-9]*",
+							inputmode: "numeric",
+						} as any
+					}
 					width="100%"
 					suffix="g"
 					register={register("grounds", { required: true, min: 1 })}
 				/>
 
+				<CoreSelectRecipe
+					selectedRecipeName={recipe?.name}
+					onSelectRecipe={handleSelectRecipe}
+				/>
+
 				<CoreInput
-					inputProps={{
-						type: "number",
-						placeholder: "ratio",
-					}}
+					inputProps={
+						{
+							type: "number",
+							placeholder: "ratio",
+							pattern: "[0-9]*",
+							inputmode: "numeric",
+						} as any
+					}
 					prefix="1:"
 					width="100%"
 					suffix="g:ml"
 					register={register("ratio", { required: true, min: 1 })}
 				/>
-				<CoreSelect
+				{/* <CoreSelect
 					placeholder="brew method"
 					options={[
 						{
@@ -101,12 +111,7 @@ const MainView: React.FC = () => {
 					]}
 					width="100%"
 					register={register("method", { required: true })}
-				/>
-
-				<CoreSelectRecipe
-					selectedRecipeName={recipe?.name}
-					onSelectRecipe={handleSelectRecipe}
-				/>
+				/> */}
 
 				<CoreButton
 					disabled={!recipe || !formState.isValid}

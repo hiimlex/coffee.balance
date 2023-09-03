@@ -6,7 +6,6 @@ export interface IRecipeStepDTO {
 export interface IMakeRecipeDataDTO {
 	grounds: number;
 	ratio: number;
-	method: string;
 	blooming: boolean;
 }
 
@@ -17,14 +16,16 @@ export interface IMakeRecipeDTO {
 
 export interface IRecipeDTO<StepProps = any, StepName = any> {
 	name: string;
+	description: string;
 	methods: string[];
 	pours: number;
 	minutes: number;
-	blooming: (grounds: number) => number;
+	recommendedGrindSize: string;
+	recommendedRatio: number;
+	steps: string[];
+	stepsObject: Record<keyof StepName, IRecipeStepDTO>;
 	formula: (
 		grounds: number,
 		ratio: number
 	) => Record<keyof StepProps, number | string>;
-	steps: string[];
-	stepsObject: Record<keyof StepName, IRecipeStepDTO>;
 }

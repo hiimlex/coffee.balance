@@ -15,7 +15,7 @@ const CoreRouter = createBrowserRouter([
 		element: <Navigate to="/coffee.balance" />,
 	},
 	{
-		path: "/coffee.balance/",
+		path: "/coffee.balance",
 		element: (
 			<Suspense fallback={<>loading</>}>
 				<BalanceModule />

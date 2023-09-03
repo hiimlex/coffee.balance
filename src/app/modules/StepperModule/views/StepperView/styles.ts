@@ -81,7 +81,11 @@ export const StyledStep = styled.div<{ isTimer?: boolean }>`
 `;
 
 export const StyledBackLink = styled.span`
-	color: ${({ theme }) => theme.colors.white1};
+	color: ${({ theme }) => theme.colors.nude1};
+
+	.icon {
+		stroke: ${({ theme }) => theme.colors.nude1};
+	}
 
 	&:hover {
 		cursor: pointer;
