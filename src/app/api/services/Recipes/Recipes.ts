@@ -78,7 +78,7 @@ const oneShot: IRecipeDTO<
 		fullPour: string;
 	}
 > = {
-	name: "continuos",
+	name: "continuous",
 	methods: ["v60", "melita"],
 	pours: 1,
 	minutes: 3,
