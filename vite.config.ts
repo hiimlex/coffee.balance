@@ -5,39 +5,33 @@ import { VitePWA, VitePWAOptions } from "vite-plugin-pwa";
 
 export const manifestToPlugin: Partial<VitePWAOptions> = {
 	registerType: "prompt",
-	includeAssets: [
-		"./icons/coffee.svg",
-		"./robots.txt",
-		"./images/apple-icon-180.png",
-	],
+	includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
 	manifest: {
 		name: "coffee.balance",
 		short_name: "coffee.balance",
 		description: "A coffee recipe generator.",
 		icons: [
 			{
-				src: "/images/manifest-icon-192.maskable.png",
+				src: "/coffee.balance/android-chrome-192x192.png",
 				sizes: "192x192",
 				type: "image/png",
-				purpose: "any",
 			},
 			{
-				src: "/images/manifest-icon-192.maskable.png",
+				src: "/coffee.balance/android-chrome-512x512.png",
 				sizes: "192x192",
 				type: "image/png",
-				purpose: "maskable",
 			},
 			{
-				src: "/images/manifest-icon-512.maskable.png",
-				sizes: "512x512",
+				src: "/coffee.balance/apple-touch-icon.png",
+				sizes: "180x180",
 				type: "image/png",
-				purpose: "any",
+				purpose: "apple touch icon",
 			},
 			{
-				src: "/images/manifest-icon-512.maskable.png",
+				src: "/coffee.balance/maskable_icon.png",
 				sizes: "512x512",
 				type: "image/png",
-				purpose: "maskable",
+				purpose: "any maskable",
 			},
 		],
 		scope: "/coffee.balance",
