@@ -10,7 +10,8 @@
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"predeploy": "npm run build",
-		"deploy": "gh-pages -d dist"
+		"deploy": "gh-pages -d dist",
+		"pwa": "npx pwa-asset-generator './public/icons/coffee.svg' -i ./index.html --path './public/images' --path-override './public/images'  --background '#A4745C' -f -m"
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.9.5",
