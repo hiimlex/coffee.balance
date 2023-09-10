@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) navigator.serviceWorker.register('/coffee.balance/dev-sw.js?dev-sw', { scope: '/coffee.balance/', type: 'classic' })

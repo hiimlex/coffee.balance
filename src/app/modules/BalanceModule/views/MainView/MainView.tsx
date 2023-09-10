@@ -73,13 +73,17 @@ const MainView: React.FC = () => {
 						{
 							type: "number",
 							placeholder: "coffee grounds",
-							pattern: "[0-9]*",
+							pattern: "[0-9][.]*",
 							inputmode: "numeric",
 						} as any
 					}
 					width="100%"
 					suffix="g"
-					register={register("grounds", { required: true, min: 1 })}
+					register={register("grounds", {
+						required: true,
+						min: 1,
+						pattern: /^[0-9.,]+$/,
+					})}
 				/>
 
 				<CoreSelectRecipe
@@ -92,14 +96,18 @@ const MainView: React.FC = () => {
 						{
 							type: "number",
 							placeholder: "ratio",
-							pattern: "[0-9]*",
+							pattern: "[0-9][.]*",
 							inputmode: "numeric",
 						} as any
 					}
 					prefix="1:"
 					width="100%"
 					suffix="g:ml"
-					register={register("ratio", { required: true, min: 1 })}
+					register={register("ratio", {
+						required: true,
+						min: 1,
+						pattern: /^[0-9.,]+$/,
+					})}
 				/>
 				{/* <CoreSelect
 					placeholder="brew method"

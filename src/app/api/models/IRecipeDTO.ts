@@ -16,12 +16,12 @@ export interface IMakeRecipeDTO {
 
 export interface IRecipeDTO<StepProps = any, StepName = any> {
 	name: string;
-	description: string;
 	methods: string[];
-	pours: number;
 	minutes: number;
+	pours: number;
 	recommendedGrindSize: string;
 	recommendedRatio: number;
+	tip: string;
 	steps: string[];
 	stepsObject: Record<keyof StepName, IRecipeStepDTO>;
 	formula: (

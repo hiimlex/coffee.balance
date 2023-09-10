@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const StyledStepperViewContainer = styled.div`
 	display: flex;
 	width: 100vw;
 	height: 100vh;
-	overflow: auto;
+
+	position: relative;
 
 	display: flex;
 	flex-direction: column;
@@ -62,7 +63,7 @@ export const StyledStep = styled.div<{ isTimer?: boolean }>`
 	justify-content: flex-start;
 	align-items: center;
 
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 
 	padding: 12px;
@@ -90,5 +91,63 @@ export const StyledBackLink = styled.span`
 	&:hover {
 		cursor: pointer;
 		text-decoration: underline;
+	}
+`;
+
+export const StyledModalContainer = styled.div`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+`;
+
+export const StyledModalContent = styled.div`
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: all 0.1s ease-in-out;
+	background: rgba(3, 3, 3, 0.20);
+`;
+
+export const StyledPopIn = keyframes`
+	0% {
+		transform: scale(0);
+	}
+	33% {
+		transform: scale(0.6);
+	}
+	66% {
+		transform: scale(1.2);
+	}
+	100% {
+		bottom: 0;
+		transform: scale(1);
+	}
+	`;
+
+export const StyledTipModal = styled.div`
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 40vw;
+	height: fit-content;
+	padding: 16px;
+	border-radius: 8px;
+
+	display: flex;
+	flex-direction: column;
+	z-index: 99;
+	background: ${({ theme }) => theme.colors.brown3};
+	color: ${({ theme }) => theme.colors.white1};
+
+	animation: ${StyledPopIn} 0.2s linear;
+
+	@media (max-width: 420px) {
+		width: 80vw;
 	}
 `;
