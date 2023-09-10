@@ -36,7 +36,7 @@ export const manifestToPlugin: Partial<VitePWAOptions> = {
 		],
 		scope: "/coffee.balance",
 		background_color: "#A4745C",
-		theme_color: "#a396d3",
+		theme_color: "#A4745C",
 		display: "standalone",
 		orientation: "portrait",
 		start_url: "/coffee.balance/",
