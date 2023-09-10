@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Coffee.Balance</title>
+		<meta name="description" content="A coffee recipe generator.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
@@ -14,159 +15,159 @@
 			rel="icon"
 			type="image/png"
 			sizes="196x196"
-			href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAADECAYAAADApo5rAAAAAXNSR0IArs4c6QAADwRJREFUeJzt3dlzW+d5BvCHBIiNBEAS3PdFNEXJXGRbomR7YmWUOrZct67txHHH4+m06XLVK/8B+Qt625l22tx4mrSRUycjL7JqO9JEsixVGyXRXERxpyiSIMEFy8Ei9oJR+kmiJHwH5+A7BJ7fhWc8ON95X4F4gLN+p+DDD97bBBEBAApVN0BkJQwEkYCBIBIwEEQCBoJIwEAQCRgIIgEDQSRgIIgEDASRgIEgEjAQRAIGgkjAQBAJGAgiAQNBJGAgiAQMBJGAgSASMBBEAgaCSGBX3UA2ldc3o7i8Eq4SP6Ibq4isLGF5ZsLQGqU1jSgJVMLtK4UWCSO8soTVuSkkkwnDavgqa1ASqIanNICkFkN4eRGh+WkktJhhNfJVXgTC4y9Dzytvw1dV99Brq/MzuHbyY0RCwYxqOIpL0P2DNxBoan/otUgoiGsnP8bq/ExGNWwOJ7oOH0VdZ89Dr2nhDVw7cQzLs5MZ1ch3tjef7/mZ6ibMVN2+G8/+2Xtw+8q2fd1V4kNdVy8iq8sILy/qqlFW14Tn3ngf3sqabV8vcnlQt7sHqUQcq/OzumqUBKqw/82/Qnl9y7av2x0O1Hb2AJtAaH4a2OR0W3rk9D5EQUEBmve9AJvD+djl7A4nmvv6UVBQoKtOY/d+OItLHrtMoc2Oxp5+2IocumrUdvbA498+1PcUFBaieV8/HO7H90KPltOBKKtvRmltQ1rLltY2oay+WbqG21eKmqeeTmtZj78M1bu6pGvY7DY09R5Ma9kilwcNTz8jXYO25Hggtt+8MGr5rTFyIXrUJs/j+GsaYbPbTK1BW3I6ELIfjO12iJ+kommX1PJ6QheQrOGrrofNlhfHSwyX04EoKJTbJ9CzB7EpufNaqOeDKlnDZreDu9T65HQgiGQxEEQCBoJIwEAQCRgIIgEDQSRgIIgEDASRgIEgEjAQRAIGgkjAQBAJGAgiAQNBJGAgiAQMBJGAgSASMBBEgpwOxHpwQWr5taV56RobwTtyy+uosS5ZI7yyhLuppHQdyvVALMp9+GSXB4C1JbkPq+zyQHb+HbQlpwNx5+Z30MJraS2rhddxZ3RQusbKzHjaH8BkIo7ZGxela4RXlrA0MZrWspubm5gaOC9dg7bkdCASsQhufHU8rWVvfPkbJLSodI27qRSuf/mbtDZRRn7/BSKrK9I1AODGV8eRiEWeuNzEpbMI3Z7WVYPyYG7XSGgZG8uLCDS2wmYveuj1VFzDtRMfYXE8vW/g7cQjGwjNTSHQtAt2x8NTVaaSCQyf+gwz1+V/Hf64joSG4NQYAo2tKHJ5Hnp98+5d3Dp/CmPnT3Fe1wwUfPjBe3nx7rm9/q05WEt8KHJ7kIhGoIXXMHP9ou5v7Qc5PSVo7NkPl68UDncxkloMWngdc0NXDduutzscaO7th9tfDmexF6m4hlh4HQu3hgyf2j8f5U0giNKR0/sQRLIYCCIBA0EkYCCIBAwEkYCBIBIwEEQCBoJIwEAQCRgIIgEDQSSwxKMqbQ4nqtp2w1dVi5LyShQUpv8IWjKHvcgBu9MFu8OJzbt3kUrGkYhFkUr+/2Xum6kk4tEI4tEIkrEwtFgUiUgYsfA6VudnFHavn/JAeCtr0Pvqj+Hxl6luhZ7Ev4l0n9WqRcJYmhjF0sQwgpNjSCYT5vZmEKWBKK1txIG3/1plCySl4A//LcDmEx786/QUo35PH+r39AEAliZGcXt4ALdHrpveZSaUBcJW5EDPD99SVZ4ysIlNoKBA6kakipYOVLR0oGnfIQyf+hSh+VkTO9RP2U51TcceuLx+VeUpU3fv6hrmr6rDgR/9FL1HrbmZrCwQZQ2tqkqTIdLbl3iU6vYuvPj+P6J2d69B/RhDWSBKaxpVlSYjFCDTTAAAuv/kDXS9dDTzFRlEWSAKbTy0uuMZdPNxY89+HHj7b+B0Pzx5QrbxxBxZQmltAw6++w/wVdUp7YOBIMtwFntx8J2/RVX7HmU9MBBkOX1HfwR/db2S2gwEWVLf638JZ7E363WVX7qRLi0aQXh5UXUbOctVXAJPaUBqzNriPGx2O+xON5yeYkP7cbo9eOb1d3Hh2M+zetnHjgnEyuwEBj77leo2clZD93PYc/g1qTEDnx9DJBT84//7axpQ29mNmo69cLgzD4i3shZP//AtXPnklxmvK107JhBkfavzM1idn8HQqc9Q1b4Hbc+9kPFRo6q2TtTt7sXc0FWDunw8BoJMsTA2iIWxQQQaWtF+8DBKa5t0r6vj+SO4c3MQqSxsOnGnmkwVnBnH+WM/x9zwNd3rcBZ70bLvkIFdPRoDQVlx/YtfY/bGZd3jm599wfAd9+0wEJQ1N776LaaufqtrrL3IgfaDRwzu6GEMBGXV0OnPsXBrWNfYhr374A1UGdzR/RgIyrprJz7Chs5zSg3d+w3u5n4MBGVdKpnQfU6poqXD4G7ux0CQEhvLi5geuCA9zu31w1NabkJHWxgIUubmua+R1DTpcRVNu0zoZgsDQcoktCjGzv9Oelygqc2EbrYwEKTUzKD8uQlvZa0JnWxhIEipVFzDytyU1BhXic+kbhgIsoDgzLj0GLvTaUInDARZQHjpjvQYu8NlQicMBFmAFtmQHmN38BeCchQDQSSIR8LSY+wOhwmdMBBkATa7/H1qm3cNmiXtAQwEKef0lEiPSSbiJnTCQJAFOIrlA5HSYiZ0wkCQBTg98vMv8ReCcpZfx8wcDATlrJrd3dJjktxkolxUVt+MIqdbasyajjPb6WIgSKmm3n7pMUvjIyZ0soWBIGV8lbWobu+SHrc0yUBQDup86VXpMfFYBKHb5j0UnoEgJVr2HUJZrfxzBs3cXAIYCFIg0NSGp158WdfYhfFRg7u5HwNBWVVSVoHeo+/oGquF17AwNmhwR/fj7N+UNf7qevT96buwF+m7UnXkzEmDO3oYA0FZUdfZjadfflP3+LWFedwevm5gR9tjIMhUTk8JOr/3Cmo69ma0nqHTnxjU0eMxEGSa5r6DaO8/nPHdbQvjI6YeahUxEGSo0pp6BJp2oaZjL4rLKzNeXzwaxtDvjhvQWXoYCNKtue8gUAAUOd2wO13wVdXC4fIYWuPKJ79EbGPd0HU+DgNBujV2P2fq+q9/8d9Z21S6h+chyJImr36LueGBrNdlIMhyQrenMHz6cyW1uclEAPTNfGGGxYlRDJz4SFl9a7wLpFxxWYXqFjBx6QxGzvyP0h4YCAIA2OxFSutfO/kxbg9dVdoDwEDQHyRiUSV1tUgYV47/Aqt3ZpXUfxADQQCA6Hoo6zUnLp/D+IXTSGhqwrgdBoIAAKlkMmu15oav4eY3XyK2vpq1muliIChrlqbGMPr7L7AeXFDdyiMxEGSahBbF8sw4lmcmEJy4icjaiuqWnoiBoIxo4TXEIxHEY2HEo1EkYhHE1lexMjtpmR1lGcoCkYrLPZ9Y9WHBXGe3y9/Fdurf/wlaOHsX3mWDsks3tGhEanmnjhmiKX0OT7H0mFwLA6AwEHHJxyg53PJ/MEqfs1huBm5Nx1N/doIdEwgzn01MgEPyoSWyf7+dQmEg5DaZAMBbWWNCJwTIT0mv50GJO4G6QETl39Dq1k4TOqHyxlbpB6HHo9xkMtT64rz0mIrW3SZ0QpUt8l80Gzr+fjuBskCsLsxJH2nyVdXAX9NgUkf5ye50ob6rV3rc4uRNE7pRT+kdc8EJ+Ylrn3r+iAmd5K/mfYdgd7qkxmjhNYSXF03qSC2lgViakJ+4tqy+BRXNu0zoJv8UuTxbM2dIujM2ZEI31qA2ENO3dI3rOvyaaU+yzyd7j7yua57VpRzdXAIUByKpxbAyOyE9zu0rxd4fvGFCR/mjqbcfVW36DlLo+WXfKZTPujF9/aKucdXtXWjsOWBwN/nBW1mD3d97RdfY6YELBndjLcoDMT9yHWsL+g7hdb30KgINrQZ3lNtcXj/6dD6fIZlMYOx/TxvckbUoDwQAjJ7VP+//s3/xPur39BnYTe7yV9fj4E/+Dm5fqa7xk5fOIh7OzTPU91giEMHpWwhOjekev/fIn6NT5yZAvqjr7Eb/j3+qe+7VRCyCiUtnDe7Keixzg9DImZM41NSue3xzbz8CDa0YOvUplmcnDexsZ3P7y9D54su6d6DvGTt/GqlE3KCurMv25vM9P1PdBADEI2GgsBDl9c261+HwFKOuqw/eylpEQsGcvQAtHS6vH20HDqP3lbcynoRseXoc35361KDOrM0yvxAAMHbua/gqa1HZ0pHReqraOlHV1gktvIHg1E0sjI9CWw8hoUWR0DQkYvJX2lqV3eHYmo7e5YbD7UGgsQ2Bpl3wVlQbsv7Y+ioGPj9myLp2goIPP3hvU3UTIpvDiUM/+Xt4/GWqWyEA3/zHP1t6lgyjWWKnWpSKa7h8/BfS91yT8QZOfJRXYQAsGAgACC8vYuDEr1W3kdcmLp3B/Ij5T/20GksGAgAWJ0Yw+OVvVbeRl+a+u6J8Fm5VLLVT/aCZwcuIrC6j97V3UOR0q24nL4ycOZkX5xsexbK/EPcsz07i2//8V0RCy6pbyWmpuIaLH3+Y12EAdkAgACCyuoJz//UvCE7rP5tNjxZdC+Hcr/6N7y8svskkSmpb32D1e/qw6+D34SzmtDSZSiUTmLz8DcYvnsmLs9Dp2DGBuGd28ArmR26gZd8hND/7gq4bXAiYG7qK0bNfQQuvqW7FUnZcIICtb7axC6cxPXgJu/q/j4a9z6huaccI3Z7Cd19/knfnF9JluTPVejjdHlS0PoVAcwcqGtukb5rPdcHpWwhO3sTi5M2cnRzAKDvyF+JBWjSC2cErmB28AgAoq29GZUsHSmsb4faV59VEyYlYDLH1ENaX5rE4Poyl6XGe9ZeQE4F40MrsJFYeuATcUxqA2+uHy+eHy+PFZuGOOMD2RInIBmLra4ithxBZXUEqmVDd0o6Wk4HYTiQURCQUVN0GWVxufE0SGYSBIBIwEEQCBoJIwEAQCRgIIgEDQSRgIIgEDASRgIEgEjAQRAIGgkjAQBAJGAgiAQNBJGAgiAQMBJGAgSASMBBEAgaCSMBAEAkYCCIBA0EkYCCIBAwEkYCBIBIwEEQCBoJIwEAQCRgIIgEDQSRgIIgEDASRgIEgEvwfcxZHnczJ22EAAAAASUVORK5CYII="
+			href="/images/favicon-196.png"
 		/>
-		<link rel="apple-touch-icon" href="data:image/png;base64,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" />
+		<link rel="apple-touch-icon" href="/coffee.balance/images/apple-icon-180.png" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="theme-color" content="#a396d3">
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2048-2732-739ddf95.jpg"
+			href="/images/apple-splash-2048-2732.jpg"
 			media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2732-2048-f227a85a.jpg"
+			href="/images/apple-splash-2732-2048.jpg"
 			media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1668-2388-00b73d8e.jpg"
+			href="/images/apple-splash-1668-2388.jpg"
 			media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2388-1668-d4fb786c.jpg"
+			href="/images/apple-splash-2388-1668.jpg"
 			media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1536-2048-c33f2293.jpg"
+			href="/images/apple-splash-1536-2048.jpg"
 			media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2048-1536-a3a8a728.jpg"
+			href="/images/apple-splash-2048-1536.jpg"
 			media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1668-2224-fb33834d.jpg"
+			href="/images/apple-splash-1668-2224.jpg"
 			media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2224-1668-54655ac2.jpg"
+			href="/images/apple-splash-2224-1668.jpg"
 			media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1620-2160-64b2a68f.jpg"
+			href="/images/apple-splash-1620-2160.jpg"
 			media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2160-1620-bba9de22.jpg"
+			href="/images/apple-splash-2160-1620.jpg"
 			media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1290-2796-83fec3cb.jpg"
+			href="/images/apple-splash-1290-2796.jpg"
 			media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2796-1290-2348dac2.jpg"
+			href="/images/apple-splash-2796-1290.jpg"
 			media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1179-2556-a704949e.jpg"
+			href="/images/apple-splash-1179-2556.jpg"
 			media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2556-1179-1f539429.jpg"
+			href="/images/apple-splash-2556-1179.jpg"
 			media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1284-2778-1710120e.jpg"
+			href="/images/apple-splash-1284-2778.jpg"
 			media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2778-1284-47fee197.jpg"
+			href="/images/apple-splash-2778-1284.jpg"
 			media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1170-2532-6a08a671.jpg"
+			href="/images/apple-splash-1170-2532.jpg"
 			media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2532-1170-a1039d84.jpg"
+			href="/images/apple-splash-2532-1170.jpg"
 			media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1125-2436-bac524f1.jpg"
+			href="/images/apple-splash-1125-2436.jpg"
 			media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2436-1125-89de7222.jpg"
+			href="/images/apple-splash-2436-1125.jpg"
 			media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1242-2688-0a560f47.jpg"
+			href="/images/apple-splash-1242-2688.jpg"
 			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2688-1242-b9362bc6.jpg"
+			href="/images/apple-splash-2688-1242.jpg"
 			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-828-1792-9fa5eaa2.jpg"
+			href="/images/apple-splash-828-1792.jpg"
 			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1792-828-afdd0d41.jpg"
+			href="/images/apple-splash-1792-828.jpg"
 			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1242-2208-3c953ddd.jpg"
+			href="/images/apple-splash-1242-2208.jpg"
 			media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-2208-1242-487560ff.jpg"
+			href="/images/apple-splash-2208-1242.jpg"
 			media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-750-1334-879903d1.jpg"
+			href="/images/apple-splash-750-1334.jpg"
 			media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1334-750-57de895f.jpg"
+			href="/images/apple-splash-1334-750.jpg"
 			media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-640-1136-b0d55e7d.jpg"
+			href="/images/apple-splash-640-1136.jpg"
 			media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
 		/>
 		<link
 			rel="apple-touch-startup-image"
-			href="/coffee.balance/assets/apple-splash-1136-640-40c7f1ae.jpg"
+			href="/images/apple-splash-1136-640.jpg"
 			media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
 		/>
 		<script type="module" crossorigin src="/coffee.balance/assets/index-d7fcf413.js"></script>

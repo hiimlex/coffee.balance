@@ -6,9 +6,9 @@ import { VitePWA, VitePWAOptions } from "vite-plugin-pwa";
 export const manifestToPlugin: Partial<VitePWAOptions> = {
 	registerType: "prompt",
 	includeAssets: [
-		"./public/icons/coffee.svg",
-		"./public/robots.txt",
-		"apple-icon-180.png",
+		"./icons/coffee.svg",
+		"./robots.txt",
+		"./images/apple-icon-180.png",
 	],
 	manifest: {
 		name: "coffee.balance",
@@ -16,25 +16,25 @@ export const manifestToPlugin: Partial<VitePWAOptions> = {
 		description: "A coffee recipe generator.",
 		icons: [
 			{
-				src: "/manifest-icon-192.maskable.png",
+				src: "/images/manifest-icon-192.maskable.png",
 				sizes: "192x192",
 				type: "image/png",
 				purpose: "any",
 			},
 			{
-				src: "/manifest-icon-192.maskable.png",
+				src: "/images/manifest-icon-192.maskable.png",
 				sizes: "192x192",
 				type: "image/png",
 				purpose: "maskable",
 			},
 			{
-				src: "/manifest-icon-512.maskable.png",
+				src: "/images/manifest-icon-512.maskable.png",
 				sizes: "512x512",
 				type: "image/png",
 				purpose: "any",
 			},
 			{
-				src: "/manifest-icon-512.maskable.png",
+				src: "/images/manifest-icon-512.maskable.png",
 				sizes: "512x512",
 				type: "image/png",
 				purpose: "maskable",
