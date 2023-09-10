@@ -18,7 +18,7 @@ export const manifestToPlugin: Partial<VitePWAOptions> = {
 			},
 			{
 				src: "/coffee.balance/android-chrome-512x512.png",
-				sizes: "192x192",
+				sizes: "512x512",
 				type: "image/png",
 			},
 			{
