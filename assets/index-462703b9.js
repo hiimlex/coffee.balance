@@ -75,10 +75,10 @@ Error generating stack: `+i.message+`
  * LICENSE.md file in the root directory of this source tree.
  *
  * @license MIT
- */function pl(){return pl=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},pl.apply(this,arguments)}function g1(e,t){return B0({basename:t==null?void 0:t.basename,future:pl({},t==null?void 0:t.future,{v7_prependBasename:!0}),history:c0({window:t==null?void 0:t.window}),hydrationData:(t==null?void 0:t.hydrationData)||w1(),routes:e,mapRouteProperties:y1}).initialize()}function w1(){var e;let t=(e=window)==null?void 0:e.__staticRouterHydrationData;return t&&t.errors&&(t=pl({},t,{errors:S1(t.errors)})),t}function S1(e){if(!e)return null;let t=Object.entries(e),n={};for(let[r,o]of t)if(o&&o.__type==="RouteErrorResponse")n[r]=new ac(o.status,o.statusText,o.data,o.internal===!0);else if(o&&o.__type==="Error"){if(o.__subType){let i=window[o.__subType];if(typeof i=="function")try{let l=new i(o.message);l.stack="",n[r]=l}catch{}}if(n[r]==null){let i=new Error(o.message);i.stack="",n[r]=i}}else n[r]=o;return n}var ld;(function(e){e.UseScrollRestoration="useScrollRestoration",e.UseSubmit="useSubmit",e.UseSubmitFetcher="useSubmitFetcher",e.UseFetcher="useFetcher"})(ld||(ld={}));var ud;(function(e){e.UseFetchers="useFetchers",e.UseScrollRestoration="useScrollRestoration"})(ud||(ud={}));const E1=O.lazy(()=>nm(()=>import("./BalanceModule-d4214e7d.js"),["assets/BalanceModule-d4214e7d.js","assets/styles-fcae19be.js"])),k1=O.lazy(()=>nm(()=>import("./StepperModule-b50b80ac.js"),["assets/StepperModule-b50b80ac.js","assets/styles-fcae19be.js"])),x1=g1([{path:"/",element:et.jsx(m1,{to:"/coffee.balance"})},{path:"/coffee.balance",element:et.jsx(O.Suspense,{fallback:et.jsx(et.Fragment,{children:"loading"}),children:et.jsx(E1,{})})},{path:"/coffee.balance/stepper",element:et.jsx(O.Suspense,{fallback:et.jsx(et.Fragment,{children:"loading"}),children:et.jsx(k1,{})})}]),C1=u0`
+ */function pl(){return pl=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},pl.apply(this,arguments)}function g1(e,t){return B0({basename:t==null?void 0:t.basename,future:pl({},t==null?void 0:t.future,{v7_prependBasename:!0}),history:c0({window:t==null?void 0:t.window}),hydrationData:(t==null?void 0:t.hydrationData)||w1(),routes:e,mapRouteProperties:y1}).initialize()}function w1(){var e;let t=(e=window)==null?void 0:e.__staticRouterHydrationData;return t&&t.errors&&(t=pl({},t,{errors:S1(t.errors)})),t}function S1(e){if(!e)return null;let t=Object.entries(e),n={};for(let[r,o]of t)if(o&&o.__type==="RouteErrorResponse")n[r]=new ac(o.status,o.statusText,o.data,o.internal===!0);else if(o&&o.__type==="Error"){if(o.__subType){let i=window[o.__subType];if(typeof i=="function")try{let l=new i(o.message);l.stack="",n[r]=l}catch{}}if(n[r]==null){let i=new Error(o.message);i.stack="",n[r]=i}}else n[r]=o;return n}var ld;(function(e){e.UseScrollRestoration="useScrollRestoration",e.UseSubmit="useSubmit",e.UseSubmitFetcher="useSubmitFetcher",e.UseFetcher="useFetcher"})(ld||(ld={}));var ud;(function(e){e.UseFetchers="useFetchers",e.UseScrollRestoration="useScrollRestoration"})(ud||(ud={}));const E1=O.lazy(()=>nm(()=>import("./BalanceModule-93d3b0d5.js"),["assets/BalanceModule-93d3b0d5.js","assets/styles-719f5ca7.js"])),k1=O.lazy(()=>nm(()=>import("./StepperModule-22ed54dd.js"),["assets/StepperModule-22ed54dd.js","assets/styles-719f5ca7.js"])),x1=g1([{path:"/",element:et.jsx(m1,{to:"/coffee.balance"})},{path:"/coffee.balance",element:et.jsx(O.Suspense,{fallback:et.jsx(et.Fragment,{children:"loading"}),children:et.jsx(E1,{})})},{path:"/coffee.balance/stepper",element:et.jsx(O.Suspense,{fallback:et.jsx(et.Fragment,{children:"loading"}),children:et.jsx(k1,{})})}]),C1=u0`
 	body {
 		margin: 0;
-		padding: 0;
+		padding: 18px;
 		font-family: 'Poppins', sans-serif;
 		background: ${({theme:e})=>e.colors.background};
 		color: ${({theme:e})=>e.colors.nude1};
@@ -86,6 +86,10 @@ Error generating stack: `+i.message+`
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		width: 100vw;
+    height: 100vh;
+    overflow: auto;
 	}
 
 	input, select, button {
