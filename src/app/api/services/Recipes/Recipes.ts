@@ -25,8 +25,8 @@ const fourthBySixth: IRecipeDTO<
 	formula: (grounds, ratio) => {
 		const total = grounds * ratio;
 
-		const fourthPour$ = (total * 0.4).toFixed(0);
-		const sixthPour$ = (total * 0.6).toFixed(0);
+		const fourthPour$ = ((total * 0.4) / 2).toFixed(0);
+		const sixthPour$ = ((total * 0.6) / 3).toFixed(0);
 		const bloomingX$ = 2;
 		const blooming$ = (grounds * bloomingX$).toFixed(0);
 
@@ -49,7 +49,7 @@ const fourthBySixth: IRecipeDTO<
 	],
 	stepsObject: {
 		rinse: {
-			label: `rinse filter & pre-heat V60`,
+			label: `rinse filter & pre-heat`,
 		},
 		timer30: {
 			label: `wait 30s`,
@@ -101,7 +101,7 @@ const oneShot: IRecipeDTO<
 	steps: ["rinse", "blooming", "timer30", "fullPour"],
 	stepsObject: {
 		rinse: {
-			label: "rinse filter & pre-heat V60",
+			label: "rinse filter & pre-heat",
 		},
 		timer30: {
 			label: `wait 30s`,
@@ -163,7 +163,7 @@ const fivePour: IRecipeDTO<
 	],
 	stepsObject: {
 		rinse: {
-			label: "rinse filter & pre-heat V60",
+			label: "rinse filter & pre-heat",
 		},
 		blooming: {
 			label: `pre-wet blooming$g water (~bloomingX$x weight of grounds)`,
@@ -205,7 +205,7 @@ const melitta: IRecipeDTO<
 		const pour12$ = (total * 0.125).toFixed(0);
 
 		const bloomingX$ = 0.125;
-		const blooming$ = (grounds * bloomingX$).toFixed(0);
+		const blooming$ = (total * bloomingX$).toFixed(0);
 
 		return {
 			blooming$,
@@ -220,7 +220,7 @@ const melitta: IRecipeDTO<
 	steps: [
 		"rinse",
 		"blooming",
-		'timer30',
+		"timer30",
 		"pour12",
 		"timer10",
 		"pour25",
@@ -229,10 +229,10 @@ const melitta: IRecipeDTO<
 	],
 	stepsObject: {
 		rinse: {
-			label: "rinse filter & pre-heat V60",
+			label: "rinse filter & pre-heat",
 		},
 		blooming: {
-			label: `pre-wet blooming$g water (~bloomingX$% of grounds weight)`,
+			label: `pre-wet blooming$g water (~bloomingX$x of grounds weight)`,
 		},
 		timer30: {
 			label: `wait 30s`,

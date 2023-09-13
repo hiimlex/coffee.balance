@@ -17,6 +17,10 @@ export const StyledStepperViewContainer = styled.div`
 	min-width: 420px;
 	width: 420px;
 
+	padding: 32px 0;
+
+	overflow: auto;
+
 	@media (max-width: 420px) {
 		min-width: 100vw;
 		width: 100vw;
@@ -108,7 +112,7 @@ export const StyledModalContent = styled.div`
 	width: 100%;
 	height: 100%;
 	transition: all 0.1s ease-in-out;
-	background: rgba(3, 3, 3, 0.20);
+	background: rgba(3, 3, 3, 0.2);
 `;
 
 export const StyledPopIn = keyframes`

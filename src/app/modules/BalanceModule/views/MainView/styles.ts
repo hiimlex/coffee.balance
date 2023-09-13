@@ -16,6 +16,8 @@ export const StyledMainViewContainer = styled.div`
 	min-width: 420px;
 	width: 420px;
 
+	padding: 32px 0;
+
 	@media (max-width: 420px) {
 		min-width: 100vw;
 		width: 100vw;

@@ -1,5 +1,8 @@
 import { IMakeRecipeDTO, IRecipeStepDTO } from "@/app/api";
 import { CoreHeader } from "@/core/components";
+import { MouseEvent, useState } from "react";
+import { ArrowLeft } from "react-feather";
+import { useNavigate } from "react-router-dom";
 import {
 	StyledBackLink,
 	StyledModalContainer,
@@ -12,9 +15,6 @@ import {
 	StyledStepperViewRecipeValue,
 	StyledTipModal,
 } from "./styles";
-import { ArrowLeft } from "react-feather";
-import { useNavigate } from "react-router-dom";
-import { MouseEvent, useState } from "react";
 
 interface IStepperViewProps extends IMakeRecipeDTO {}
 

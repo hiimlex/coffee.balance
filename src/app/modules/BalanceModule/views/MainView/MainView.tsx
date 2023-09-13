@@ -34,6 +34,7 @@ const MainView: React.FC = () => {
 		trigger("ratio");
 
 		setRecipe(recipe);
+		
 		setValue("ratio", recipe.recommendedRatio.toString());
 	};
 
