@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 export const StyledStepperViewContainer = styled.div`
 	display: flex;
 	width: 100vw;
-	height: 100vh;
+	height: fit-content;
 
 	position: relative;
 
