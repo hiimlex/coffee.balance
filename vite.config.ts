@@ -31,7 +31,7 @@ export const manifestToPlugin: Partial<VitePWAOptions> = {
 				src: "/coffee.balance/maskable_icon.png",
 				sizes: "512x512",
 				type: "image/png",
-				purpose: "any maskable",
+				purpose: "maskable",
 			},
 		],
 		scope: "/coffee.balance",
@@ -49,7 +49,10 @@ export const manifestToPlugin: Partial<VitePWAOptions> = {
 // https://vitejs.dev/config/
 export default defineConfig({
 	base: "/coffee.balance",
-	plugins: [react(), VitePWA(manifestToPlugin)],
+	plugins: [
+		react(),
+		// VitePWA(manifestToPlugin)
+	],
 	resolve: {
 		alias: {
 			"@": resolve(__dirname, "./src"),

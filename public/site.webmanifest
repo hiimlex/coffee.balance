@@ -13,7 +13,6 @@
 			"sizes": "512x512",
 			"type": "image/png"
 		},
-		
 		{
 			"src": "/coffee.balance/apple-touch-icon.png",
 			"sizes": "180x180",
@@ -24,7 +23,7 @@
 			"src": "/coffee.balance/maskable_icon.png",
 			"sizes": "512x512",
 			"type": "image/png",
-			"purpose": "any maskable"
+			"purpose": "maskable"
 		}
 	],
 	"scope": "/coffee.balance",
