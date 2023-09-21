@@ -22,6 +22,8 @@ const CoreProviders: React.FC = () => {
 
 			setInit(true);
 			OneSignal.Slidedown.promptPush();
+
+			console.log("uePA");
 		} catch (error) {
 			console.log(error);
 		}
