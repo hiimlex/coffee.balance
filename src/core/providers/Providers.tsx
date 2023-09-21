@@ -18,6 +18,8 @@ const CoreProviders: React.FC = () => {
 
 			await OneSignal.init({
 				appId: "0fbccbba-40af-4969-9855-747fc4dfbb5b",
+				serviceWorkerParam: { scope: "/coffee.balance/" },
+				serviceWorkerPath: "coffee.balance/OneSignalSDKWorker.js",
 			});
 
 			setInit(true);
