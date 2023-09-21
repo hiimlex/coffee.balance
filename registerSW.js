@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/coffee.balance/sw.js', { scope: '/coffee.balance/' })})}
