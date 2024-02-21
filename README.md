@@ -2,8 +2,8 @@
 
 A coffee recipe generator.
 
-- [ ] unify stepper with mainView to allow refresh on github.io
+- [x] unify stepper with mainView to allow refresh on github.io
 - [x] add more methods 
 - [ ] add custom method
 - [ ] timer
-- [ ] tip section on methods
+- [x] tip section on methods
