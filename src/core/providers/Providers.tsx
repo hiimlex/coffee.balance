@@ -6,33 +6,7 @@ import { AppStore } from "../store";
 import GlobalStyles from "../styles/GlobalStyles";
 import theme from "../styles/theme";
 
-import { useCallback, useEffect, useState } from "react";
-import OneSignal from "react-onesignal";
-
 const CoreProviders: React.FC = () => {
-	const [init, setInit] = useState(false);
-
-	const initOneSignal = useCallback(async () => {
-		try {
-			if (init) return;
-
-			await OneSignal.init({
-				appId: "0fbccbba-40af-4969-9855-747fc4dfbb5b",
-				serviceWorkerParam: { scope: "/coffee.balance/" },
-				serviceWorkerPath: "coffee.balance/OneSignalSDKWorker.js",
-			});
-
-			setInit(true);
-			OneSignal.Slidedown.promptPush();
-		} catch (error) {
-			console.log(error);
-		}
-	}, []);
-
-	useEffect(() => {
-		initOneSignal();
-	}, []);
-
 	return (
 		<StoreProvider store={AppStore}>
 			<ThemeProvider theme={theme}>

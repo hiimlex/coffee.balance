@@ -5,10 +5,6 @@ const BalanceModule = lazy(
 	() => import("../../app/modules/BalanceModule/BalanceModule")
 );
 
-const StepperModule = lazy(
-	() => import("../../app/modules/StepperModule/StepperModule")
-);
-
 const CoreRouter = createBrowserRouter([
 	{
 		path: "/",
@@ -19,14 +15,6 @@ const CoreRouter = createBrowserRouter([
 		element: (
 			<Suspense fallback={<>loading</>}>
 				<BalanceModule />
-			</Suspense>
-		),
-	},
-	{
-		path: "/coffee.balance/stepper",
-		element: (
-			<Suspense fallback={<>loading</>}>
-				<StepperModule />
 			</Suspense>
 		),
 	},

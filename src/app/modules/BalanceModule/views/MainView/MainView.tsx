@@ -8,12 +8,12 @@ import {
 import {
 	AppDispatch,
 	RECIPE_MAKER_LOCALSTORAGE_KEY,
+	changeStep,
 	generateRecipeStepper,
 } from "@/core/store";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { StyledMainViewContainer, StyledMainViewForm } from "./styles";
 
 const MainView: React.FC = () => {
@@ -25,7 +25,6 @@ const MainView: React.FC = () => {
 		},
 	});
 	const [recipe, setRecipe] = useState<IRecipeDTO | undefined>();
-	const navigate = useNavigate();
 
 	const dispath = useDispatch<AppDispatch>();
 
@@ -34,7 +33,7 @@ const MainView: React.FC = () => {
 		trigger("ratio");
 
 		setRecipe(recipe);
-		
+
 		setValue("ratio", recipe.recommendedRatio.toString());
 	};
 
@@ -48,19 +47,14 @@ const MainView: React.FC = () => {
 		};
 
 		if (recipe) {
-			dispath(
-				generateRecipeStepper({
-					recipe,
-					data,
-				})
-			);
+			dispath(generateRecipeStepper({ recipe, data }));
 
 			localStorage.setItem(
 				RECIPE_MAKER_LOCALSTORAGE_KEY,
 				JSON.stringify({ recipeName: recipe.name, data })
 			);
 
-			navigate("/coffee.balance/stepper");
+			dispath(changeStep("stepper"));
 		}
 	};
 

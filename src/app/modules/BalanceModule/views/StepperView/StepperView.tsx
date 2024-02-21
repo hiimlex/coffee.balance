@@ -1,8 +1,9 @@
-import { IMakeRecipeDTO, IRecipeStepDTO } from "@/app/api";
+import { IRecipeStepDTO } from "@/app/api";
 import { CoreHeader } from "@/core/components";
+import { AppDispatch, RootState, changeStep } from "@/core/store";
 import { MouseEvent, useState } from "react";
 import { ArrowLeft } from "react-feather";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
 	StyledBackLink,
 	StyledModalContainer,
@@ -16,13 +17,16 @@ import {
 	StyledTipModal,
 } from "./styles";
 
-interface IStepperViewProps extends IMakeRecipeDTO {}
-
-const StepperView: React.FC<IStepperViewProps> = ({ recipe, data }) => {
-	const formula = recipe.formula(data.grounds, data.ratio);
+const StepperView: React.FC = () => {
+	const { recipe, data } = useSelector((state: RootState) => state.recipeMaker);
 	const [showModal, setShowModal] = useState(false);
+	const dispath = useDispatch<AppDispatch>();
 
-	const navigate = useNavigate();
+	if (!recipe || !data) {
+		return <div>no recipe :(</div>;
+	}
+
+	const formula = recipe.formula(data.grounds, data.ratio);
 
 	const getStep = (step: string, index: number): IRecipeStepDTO => {
 		const { label, isTimer } = recipe.stepsObject[step];
@@ -38,7 +42,7 @@ const StepperView: React.FC<IStepperViewProps> = ({ recipe, data }) => {
 	};
 
 	const goBack = () => {
-		navigate("/");
+		dispath(changeStep("balance"));
 	};
 
 	const handleShowModal = (event: MouseEvent) => {
