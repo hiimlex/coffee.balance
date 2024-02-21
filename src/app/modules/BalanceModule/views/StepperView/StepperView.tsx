@@ -1,6 +1,11 @@
 import { IRecipeStepDTO } from "@/app/api";
 import { CoreHeader } from "@/core/components";
-import { AppDispatch, RootState, changeStep } from "@/core/store";
+import {
+	AppDispatch,
+	RECIPE_MAKER_LOCALSTORAGE_KEY,
+	RootState,
+	changeStep,
+} from "@/core/store";
 import { MouseEvent, useState } from "react";
 import { ArrowLeft } from "react-feather";
 import { useDispatch, useSelector } from "react-redux";
@@ -42,6 +47,7 @@ const StepperView: React.FC = () => {
 	};
 
 	const goBack = () => {
+		localStorage.setItem(RECIPE_MAKER_LOCALSTORAGE_KEY, "");
 		dispath(changeStep("balance"));
 	};
 
