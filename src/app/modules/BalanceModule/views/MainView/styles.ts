@@ -14,12 +14,12 @@ export const StyledMainViewContainer = styled.div`
 
 	gap: 12px;
 
-	min-width: 420px;
-	width: 420px;
+	min-width: 520px;
+	width: 520px;
 
 	padding: 32px 0;
 
-	@media (max-width: 420px) {
+	@media (max-width: 520px) {
 		min-width: 100vw;
 		width: 100vw;
 

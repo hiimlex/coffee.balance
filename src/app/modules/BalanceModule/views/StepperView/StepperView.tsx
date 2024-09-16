@@ -33,7 +33,7 @@ const StepperView: React.FC = () => {
 
 	const formula = recipe.formula(data.grounds, data.ratio);
 
-	const getStep = (step: string, index: number): IRecipeStepDTO => {
+	const getStep = (step: any, index: number): IRecipeStepDTO => {
 		const { label, isTimer } = recipe.stepsObject[step];
 		let replacedLabel = `${index + 1}. ${label}`;
 
@@ -128,9 +128,10 @@ const StepperView: React.FC = () => {
 			{showModal && (
 				<StyledModalContainer>
 					<StyledModalContent onClick={handleShowModal}>
-						<StyledTipModal onClick={stopPropagation}>
-							{recipe.tip}
-						</StyledTipModal>
+						<StyledTipModal
+							onClick={stopPropagation}
+							dangerouslySetInnerHTML={{ __html: recipe.tip }}
+						></StyledTipModal>
 					</StyledModalContent>
 				</StyledModalContainer>
 			)}

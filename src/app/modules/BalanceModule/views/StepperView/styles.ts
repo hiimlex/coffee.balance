@@ -14,14 +14,14 @@ export const StyledStepperViewContainer = styled.div`
 
 	gap: 12px;
 
-	min-width: 420px;
-	width: 420px;
+	min-width: 520px;
+	width: 520px;
 
 	padding: 32px 0;
 
 	overflow: auto;
 
-	@media (max-width: 420px) {
+	@media (max-width: 520px) {
 		min-width: 100vw;
 		width: 100vw;
 
@@ -42,7 +42,7 @@ export const StyledStepperViewRecipe = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
 	padding: 8px;
 	border-radius: 8px;
 	background-color: ${({ theme }) => theme.colors.brown3};
@@ -57,8 +57,10 @@ export const StyledStepperViewRecipeLabel = styled.span`
 `;
 
 export const StyledStepperViewRecipeValue = styled.span`
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 600;
+	text-align: center;
+	text-overflow: ellipsis;
 `;
 
 export const StyledStep = styled.div<{ isTimer?: boolean }>`
@@ -151,7 +153,7 @@ export const StyledTipModal = styled.div`
 
 	animation: ${StyledPopIn} 0.2s linear;
 
-	@media (max-width: 420px) {
+	@media (max-width: 520px) {
 		width: 80vw;
 	}
 `;

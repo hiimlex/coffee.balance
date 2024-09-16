@@ -14,15 +14,27 @@ export interface IMakeRecipeDTO {
 	data: IMakeRecipeDataDTO;
 }
 
+export type IRecipeMethods =
+	| "french press"
+	| "iced coffee"
+	| "pour over"
+	| "v60"
+	| "immersion"
+	| "dripper"
+	| "cold brew"
+	| "brikka"
+	| "moka"
+	| "melitta";
+
 export interface IRecipeDTO<StepProps = any, StepName = any> {
 	name: string;
-	methods: string[];
+	methods: IRecipeMethods[];
 	minutes: number;
 	pours: number;
 	recommendedGrindSize: string;
 	recommendedRatio: number;
 	tip: string;
-	steps: string[];
+	steps: Array<keyof StepName>;
 	stepsObject: Record<keyof StepName, IRecipeStepDTO>;
 	formula: (
 		grounds: number,
