@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledMainViewContainer = styled.div`
 	display: flex;
-	width: 100vw;
+	width: 100%;
 	height: fit-content;
 	
 	overflow: auto;
@@ -20,8 +20,7 @@ export const StyledMainViewContainer = styled.div`
 	padding: 32px 0;
 
 	@media (max-width: 520px) {
-		min-width: 100vw;
-		width: 100vw;
+		width: 100%;
 
 		padding: 18px;
 	}

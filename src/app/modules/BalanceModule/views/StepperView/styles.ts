@@ -2,7 +2,6 @@ import styled, { keyframes } from "styled-components";
 
 export const StyledStepperViewContainer = styled.div`
 	display: flex;
-	width: 100vw;
 	height: fit-content;
 
 	position: relative;
@@ -22,10 +21,9 @@ export const StyledStepperViewContainer = styled.div`
 	overflow: auto;
 
 	@media (max-width: 520px) {
-		min-width: 100vw;
-		width: 100vw;
+		width: 100%;
 
-		padding: 18px;
+		padding: 12px;
 	}
 `;
 
@@ -104,9 +102,12 @@ export const StyledModalContainer = styled.div`
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100vw;
-	height: 100vh;
+	min-width: 100vw;
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
 	overflow: hidden;
+	overflow-y: auto;
 `;
 
 export const StyledModalContent = styled.div`

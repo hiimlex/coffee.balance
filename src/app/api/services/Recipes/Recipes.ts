@@ -231,7 +231,7 @@ const melittaRecipe: IRecipeDTO<
 	},
 	recommendedGrindSize: "medium",
 	recommendedRatio: 17,
-	tip: "the melitta method is a simple method that involves pouring all the water at once, the grind size is very important at this method.",
+	tip: "Melitta is a pour-over method that uses a cone-shaped filter. It's similar to the V60, but the Melitta filter has a flat bottom, which can lead to a more balanced extraction.",
 	steps: [
 		"rinse",
 		"blooming",

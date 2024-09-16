@@ -13,12 +13,19 @@ const GlobalStyles = createGlobalStyle`
 		justify-content: center;
 
 		width: 100vw;
-    min-height: 100vh;
+		min-height: 100vh;
+		height: 100%;
     overflow: auto;
+		overflow-x: hidden;
 	}
 
 	input, select, button {
 		font-family: 'Poppins', sans-serif;
+	}
+
+	/* Hide scrollbar */
+	::-webkit-scrollbar {
+		display: none;
 	}
 
 	* {
