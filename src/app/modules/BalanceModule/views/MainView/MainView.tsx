@@ -34,7 +34,10 @@ const MainView: React.FC = () => {
 
 		setRecipe(recipe);
 
-		setValue("ratio", recipe.recommendedRatio.toString());
+		const ratio = getValues("ratio");
+		if (!ratio) {
+			setValue("ratio", recipe.recommendedRatio.toString());
+		}
 	};
 
 	const handleGenerate = () => {

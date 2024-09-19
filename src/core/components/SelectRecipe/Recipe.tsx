@@ -14,7 +14,7 @@ const SelectRecipe: React.FC<ISelectRecipeProps> = ({
 }) => {
 	return (
 		<StyledRecipesField>
-			<StyledRecipesLabel>pour-over recipe</StyledRecipesLabel>
+			<StyledRecipesLabel>select the recipe</StyledRecipesLabel>
 			<StyledRecipesGrid>
 				{RecipesService.all.map((recipe, index) => (
 					<StyledRecipe
