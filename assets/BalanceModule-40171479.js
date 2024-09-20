@@ -1,4 +1,4 @@
-import{R as xe,u as Et,c as Pt,s as w,j as f,r as Q,g as Ct,a as L,b as pt,d as ze,e as Me,W as Lt,f as ht}from"./index-5f197f8a.js";function mt(e=xe){const r=e===xe?Et:Pt(e);return function(){const{store:t}=r();return t}}const zt=mt();function Mt(e=xe){const r=e===xe?zt:mt(e);return function(){return r().dispatch}}const Ie=Mt(),It=w.button`
+import{R as xe,u as Et,c as Pt,s as w,j as f,r as Q,g as Ct,a as L,b as pt,d as ze,e as Me,W as Lt,f as ht}from"./index-1e38e4a6.js";function mt(e=xe){const r=e===xe?Et:Pt(e);return function(){const{store:t}=r();return t}}const zt=mt();function Mt(e=xe){const r=e===xe?zt:mt(e);return function(){return r().dispatch}}const Ie=Mt(),It=w.button`
 	padding: 10px 12px;
 	font-size: 14px;
 	font-weight: 600;
@@ -171,15 +171,16 @@ import{R as xe,u as Et,c as Pt,s as w,j as f,r as Q,g as Ct,a as L,b as pt,d as 
 
 	gap: 12px;
 
-	min-width: 520px;
+	max-width: 520px;
 	width: 520px;
 
 	padding: 32px 0;
 
-	@media (max-width: 520px) {
+	@media (max-width: 600px) {
 		width: 100%;
+		max-width: 420px;
 
-		padding: 18px;
+		padding: 12px;
 	}
 `,wr=w.div`
 	width: 100%;
@@ -290,14 +291,14 @@ import{R as xe,u as Et,c as Pt,s as w,j as f,r as Q,g as Ct,a as L,b as pt,d as 
 
 	gap: 12px;
 
-	min-width: 520px;
+	max-width: 520px;
 	width: 520px;
 
 	padding: 32px 0;
 
 	overflow: auto;
 
-	@media (max-width: 520px) {
+	@media (max-width: 600px) {
 		width: 100%;
 
 		padding: 12px;
