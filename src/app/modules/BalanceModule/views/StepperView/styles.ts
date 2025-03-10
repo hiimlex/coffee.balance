@@ -99,21 +99,22 @@ export const StyledBackLink = styled.span`
 `;
 
 export const StyledModalContainer = styled.div`
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	min-width: 100vw;
 	min-height: 100vh;
 	height: 100%;
-	display: flex;
-	overflow: hidden;
-	overflow-y: auto;
+	z-index: 99;
 `;
 
 export const StyledModalContent = styled.div`
-	position: relative;
 	width: 100%;
 	height: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 24px;
+	overflow-y: auto;
 	transition: all 0.1s ease-in-out;
 	background: rgba(3, 3, 3, 0.2);
 `;
@@ -135,12 +136,6 @@ export const StyledPopIn = keyframes`
 	`;
 
 export const StyledTipModal = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
 	width: 40vw;
 	height: fit-content;
 	padding: 16px;
@@ -148,13 +143,12 @@ export const StyledTipModal = styled.div`
 
 	display: flex;
 	flex-direction: column;
-	z-index: 99;
 	background: ${({ theme }) => theme.colors.brown3};
 	color: ${({ theme }) => theme.colors.white1};
 
 	animation: ${StyledPopIn} 0.2s linear;
 
 	@media (max-width: 520px) {
-		width: 80vw;
+		width: 100%;
 	}
 `;
