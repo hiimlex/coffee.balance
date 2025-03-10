@@ -1,4 +1,4 @@
-import{R as be,u as Et,c as Tt,s as w,j as f,r as Q,g as Ct,a as L,b as pt,d as ze,e as Me,W as Lt,f as ht}from"./index-c0867ebf.js";function gt(e=be){const r=e===be?Et:Tt(e);return function(){const{store:t}=r();return t}}const zt=gt();function Mt(e=be){const r=e===be?zt:gt(e);return function(){return r().dispatch}}const Ie=Mt(),It=w.button`
+import{R as be,u as Et,c as Tt,s as w,j as f,r as Q,g as Ct,a as L,b as pt,d as ze,e as Me,W as Lt,f as ht}from"./index-63c72147.js";function gt(e=be){const r=e===be?Et:Tt(e);return function(){const{store:t}=r();return t}}const zt=gt();function Mt(e=be){const r=e===be?zt:gt(e);return function(){return r().dispatch}}const Ie=Mt(),It=w.button`
 	padding: 10px 12px;
 	font-size: 14px;
 	font-weight: 600;
@@ -360,19 +360,20 @@ import{R as be,u as Et,c as Tt,s as w,j as f,r as Q,g as Ct,a as L,b as pt,d as 
 		text-decoration: underline;
 	}
 `,Xr=w.div`
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	min-width: 100vw;
 	min-height: 100vh;
 	height: 100%;
-	display: flex;
-	overflow: hidden;
-	overflow-y: auto;
+	z-index: 99;
 `,Kr=w.div`
-	position: relative;
 	width: 100%;
 	height: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 24px;
+	overflow-y: auto;
 	transition: all 0.1s ease-in-out;
 	background: rgba(3, 3, 3, 0.2);
 `,Yr=Lt`
@@ -390,12 +391,6 @@ import{R as be,u as Et,c as Tt,s as w,j as f,r as Q,g as Ct,a as L,b as pt,d as 
 		transform: scale(1);
 	}
 	`,Jr=w.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
 	width: 40vw;
 	height: fit-content;
 	padding: 16px;
@@ -403,13 +398,12 @@ import{R as be,u as Et,c as Tt,s as w,j as f,r as Q,g as Ct,a as L,b as pt,d as 
 
 	display: flex;
 	flex-direction: column;
-	z-index: 99;
 	background: ${({theme:e})=>e.colors.brown3};
 	color: ${({theme:e})=>e.colors.white1};
 
 	animation: ${Yr} 0.2s linear;
 
 	@media (max-width: 520px) {
-		width: 80vw;
+		width: 100%;
 	}
 `,Qr=()=>{const{recipe:e,data:r}=ht(j=>j.recipeMaker),[s,t]=Q.useState(!1),o=Ie();if(!e||!r)return f.jsx("div",{children:"no recipe :("});const n=e.formula(r.grounds,r.ratio),u=(j,k)=>{const{label:y,isTimer:B}=e.stepsObject[j];let E=`${k+1}. ${y}`;return Object.keys(n).forEach(Z=>{y.includes(Z)&&(E=E.replace(Z,n[Z]))}),{label:E,isTimer:B}},m=()=>{localStorage.setItem(ze,""),o(Me("balance"))},x=j=>{j&&(j.preventDefault(),j.stopPropagation()),t(k=>!k)},O=j=>{j.stopPropagation()};return f.jsxs(f.Fragment,{children:[f.jsxs(Wr,{children:[f.jsxs(Gr,{onClick:m,children:[f.jsx(sr,{size:14,className:"icon"})," back"]}),f.jsx(yt,{}),f.jsxs(Hr,{children:[f.jsxs(oe,{children:[f.jsx(ae,{children:e.name}),f.jsx(ne,{children:"recipe"})]}),f.jsxs(oe,{children:[f.jsxs(ae,{children:[r.grounds,"g/~",Number(r.grounds*r.ratio).toFixed(0),"ml"]}),f.jsx(ne,{children:"size"})]}),f.jsxs(oe,{children:[f.jsxs(ae,{children:["1:",r.ratio]}),f.jsx(ne,{children:"ratio"})]}),f.jsxs(oe,{children:[f.jsxs(ae,{children:[e.minutes,"m"]}),f.jsx(ne,{children:"time"})]}),f.jsxs(oe,{children:[f.jsx(ae,{children:e.recommendedGrindSize}),f.jsx(ne,{children:"grind"})]}),f.jsxs(oe,{onClick:x,style:{cursor:"pointer"},children:[f.jsx(ae,{children:"?"}),f.jsx(ne,{children:"tip"})]})]}),e.steps.map((j,k)=>{const y=u(j,k);return f.jsx(qr,{isTimer:y.isTimer,children:y.label},k)})]}),s&&f.jsx(Xr,{children:f.jsx(Kr,{onClick:x,children:f.jsx(Jr,{onClick:O,dangerouslySetInnerHTML:{__html:e.tip}})})})]})},ss=()=>{const e=ht(t=>t.recipeMaker.step),r=Ie(),s=Q.useCallback(()=>{const t=localStorage.getItem(ze);if(t){const o=JSON.parse(t);if(o){const{data:n}=o,u=Ue.find(m=>m.name===o.recipeName);u&&n&&(r(pt({recipe:u,data:n})),r(Me("stepper")))}}},[]);return Q.useEffect(()=>{s()},[s]),f.jsxs(f.Fragment,{children:[e==="balance"&&f.jsx(Ur,{}),e==="stepper"&&f.jsx(Qr,{})]})};export{ss as default};
