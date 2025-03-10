@@ -12,6 +12,8 @@ const fourthBySixthRecipe: IRecipeDTO<
 		blooming: string;
 		timer30: string;
 		fourthPour: string;
+		sugarPour: string;
+		acidPour: string;
 		sixthPour: string;
 		serve: string;
 	}
@@ -26,8 +28,11 @@ const fourthBySixthRecipe: IRecipeDTO<
 	formula: (grounds, ratio) => {
 		const total = grounds * ratio;
 
-		const fourthPour$ = ((total * 0.4) / 2).toFixed(0);
 		const sixthPour$ = ((total * 0.6) / 3).toFixed(0);
+		const fourthPour$ = (total * 0.4).toFixed(0);
+		const sugarPour$ = (+fourthPour$ * 0.65).toFixed(0);
+		const acidPour$ = (+fourthPour$ * 0.35).toFixed(0);
+
 		const bloomingX$ = 2;
 		const blooming$ = (grounds * bloomingX$).toFixed(0);
 
@@ -36,14 +41,16 @@ const fourthBySixthRecipe: IRecipeDTO<
 			fourthPour$,
 			sixthPour$,
 			bloomingX$,
+			sugarPour$,
+			acidPour$,
 		};
 	},
 	steps: [
 		"rinse",
 		"blooming",
 		"timer30",
-		"fourthPour",
-		"fourthPour",
+		"acidPour",
+		"sugarPour",
 		"sixthPour",
 		"sixthPour",
 		"sixthPour",
@@ -63,11 +70,17 @@ const fourthBySixthRecipe: IRecipeDTO<
 		fourthPour: {
 			label: `pour fourthPour$g water`,
 		},
+		sugarPour: {
+			label: `pour sugarPour$g water`,
+		},
+		acidPour: {
+			label: `pour acidPour$g water`,
+		},
 		sixthPour: {
 			label: `pour sixthPour$g water`,
 		},
 		serve: {
-			label: "Serve the coffee and enjoy!",
+			label: "serve the coffee and enjoy!",
 		},
 	},
 };
@@ -120,7 +133,7 @@ const continuousRecipe: IRecipeDTO<
 			label: `pour fullPour$g water`,
 		},
 		serve: {
-			label: "Serve the coffee and enjoy!",
+			label: "serve the coffee and enjoy!",
 		},
 	},
 };
@@ -187,7 +200,7 @@ const fivePourRecipe: IRecipeDTO<
 			isTimer: true,
 		},
 		serve: {
-			label: "Serve the coffee and enjoy!",
+			label: "serve the coffee and enjoy!",
 		},
 	},
 };
@@ -265,7 +278,7 @@ const melittaRecipe: IRecipeDTO<
 			label: `pour pour12$g water`,
 		},
 		serve: {
-			label: "Serve the coffee and enjoy!",
+			label: "serve the coffee and enjoy!",
 		},
 	},
 };
@@ -287,7 +300,7 @@ const frenchPressRecipe: IRecipeDTO<
 > = {
 	name: "french press",
 	methods: ["french press"],
-	minutes: 8,
+	minutes: 10,
 	pours: 1,
 	formula: (grounds, ratio) => {
 		const total = grounds * ratio;
@@ -335,7 +348,7 @@ const frenchPressRecipe: IRecipeDTO<
 			label: `plunge the press until the screen rests on top of the liquid`,
 		},
 		serve: {
-			label: "Serve the coffee and enjoy!",
+			label: "serve the coffee and enjoy!",
 		},
 	},
 };
@@ -499,7 +512,7 @@ const v60IcedCoffeeJapaneseStyleRecipe: IRecipeDTO<
 			hotWater$,
 		};
 	},
-	recommendedGrindSize: "medium",
+	recommendedGrindSize: "coarse",
 	recommendedRatio: 16, // 1:16 coffee to water ratio
 	tip: "Swirl the dripper to ensure even extraction and proper cooling over the ice.",
 	steps: ["boil", "grind", "addIce", "bloom", "pour", "swirl", "serve"],
@@ -595,7 +608,7 @@ const brikkaPotRecipe: IRecipeDTO<
 		},
 		serve: {
 			label:
-				"remove from heat when you hear a hissing sound. Serve the coffee immediately.",
+				"remove from heat when you hear a hissing sound. serve the coffee immediately.",
 		},
 	},
 };
@@ -667,7 +680,7 @@ const mokaPotRecipe: IRecipeDTO<
 		},
 		serve: {
 			label:
-				"remove from heat as soon as brewing slows to avoid burning. Serve the coffee immediately.",
+				"remove from heat as soon as brewing slows to avoid burning. serve the coffee immediately.",
 		},
 	},
 };
@@ -678,11 +691,11 @@ const all = [
 	fivePourRecipe,
 	melittaRecipe,
 	frenchPressRecipe,
-	coldBrewImmersionRecipe,
-	harioImmersionDripperSwitchRecipe,
+	// coldBrewImmersionRecipe,
+	// harioImmersionDripperSwitchRecipe,
 	v60IcedCoffeeJapaneseStyleRecipe,
-	brikkaPotRecipe,
-	mokaPotRecipe,
+	// brikkaPotRecipe,
+	// mokaPotRecipe,
 ].sort((a, b) => {
 	if (a.name > b.name) return 1;
 	if (a.name < b.name) return -1;

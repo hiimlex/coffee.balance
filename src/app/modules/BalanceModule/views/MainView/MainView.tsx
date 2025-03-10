@@ -26,7 +26,7 @@ const MainView: React.FC = () => {
 	});
 	const [recipe, setRecipe] = useState<IRecipeDTO | undefined>();
 
-	const dispath = useDispatch<AppDispatch>();
+	const dispatch = useDispatch<AppDispatch>();
 
 	const handleSelectRecipe = (recipe: IRecipeDTO) => {
 		trigger("grounds");
@@ -50,14 +50,14 @@ const MainView: React.FC = () => {
 		};
 
 		if (recipe) {
-			dispath(generateRecipeStepper({ recipe, data }));
+			dispatch(generateRecipeStepper({ recipe, data }));
 
 			localStorage.setItem(
 				RECIPE_MAKER_LOCALSTORAGE_KEY,
 				JSON.stringify({ recipeName: recipe.name, data })
 			);
 
-			dispath(changeStep("stepper"));
+			dispatch(changeStep("stepper"));
 		}
 	};
 

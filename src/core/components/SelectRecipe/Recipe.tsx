@@ -16,9 +16,9 @@ const SelectRecipe: React.FC<ISelectRecipeProps> = ({
 		<StyledRecipesField>
 			<StyledRecipesLabel>select the recipe</StyledRecipesLabel>
 			<StyledRecipesGrid>
-				{RecipesService.all.map((recipe, index) => (
+				{RecipesService.all.map((recipe) => (
 					<StyledRecipe
-						key={index}
+						key={recipe.name}
 						onClick={() => onSelectRecipe(recipe)}
 						selected={selectedRecipeName === recipe.name}
 					>
