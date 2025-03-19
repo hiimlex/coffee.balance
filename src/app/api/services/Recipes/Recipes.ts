@@ -426,7 +426,7 @@ const harioImmersionDripperSwitchRecipe: IRecipeDTO<
 	minutes: 4,
 	pours: 2,
 	formula: (grounds, ratio) => {
-		const bloom$ = total * 0.15;
+		const bloom$ = grounds * ratio * 0.15;
 		const total = grounds * ratio;
 		const pour$ = total - bloom$;
 
