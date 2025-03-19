@@ -225,7 +225,7 @@ const melittaRecipe: IRecipeDTO<
 	pours: 1,
 	formula: (grounds, ratio) => {
 		const bloomingX$ = 0.2;
-		const blooming$ = (total * bloomingX$).toFixed(0);
+		const blooming$ = (grounds * ratio * bloomingX$).toFixed(0);
 		const total = grounds * ratio - +blooming$;
 
 		const pour25$ = (total * 0.25).toFixed(0);
