@@ -13,7 +13,6 @@ import {
 	StyledBackLink,
 	StyledModalContainer,
 	StyledModalContent,
-	StyledModalWrapper,
 	StyledStep,
 	StyledStepperViewContainer,
 	StyledStepperViewRecipe,

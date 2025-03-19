@@ -26,15 +26,14 @@ const fourthBySixthRecipe: IRecipeDTO<
 	pours: 5,
 	minutes: 3,
 	formula: (grounds, ratio) => {
-		const total = grounds * ratio;
+		const bloomingX$ = 2;
+		const blooming$ = (grounds * bloomingX$).toFixed(0);
+		const total = grounds * ratio - +blooming$;
 
 		const sixthPour$ = ((total * 0.6) / 3).toFixed(0);
 		const fourthPour$ = (total * 0.4).toFixed(0);
 		const sugarPour$ = (+fourthPour$ * 0.65).toFixed(0);
 		const acidPour$ = (+fourthPour$ * 0.35).toFixed(0);
-
-		const bloomingX$ = 2;
-		const blooming$ = (grounds * bloomingX$).toFixed(0);
 
 		return {
 			blooming$,
@@ -107,9 +106,9 @@ const continuousRecipe: IRecipeDTO<
 	pours: 1,
 	minutes: 3,
 	formula: (grounds, ratio) => {
-		const fullPour$ = (grounds * ratio).toFixed(0);
 		const bloomingX$ = 1.5;
 		const blooming$ = grounds * bloomingX$;
+		const fullPour$ = (grounds * ratio - +blooming$).toFixed(0);
 
 		return {
 			fullPour$,
@@ -160,13 +159,11 @@ const fivePourRecipe: IRecipeDTO<
 	recommendedGrindSize: "medium",
 	recommendedRatio: 15,
 	formula: (grounds, ratio) => {
-		const total = grounds * ratio;
+		const bloomingX$ = 3;
+		const blooming$ = (grounds * bloomingX$).toFixed(0);
+		const total = grounds * ratio - +blooming$;
 
 		const fifth$ = (total / 5).toFixed(0);
-
-		const bloomingX$ = 3;
-
-		const blooming$ = (grounds * bloomingX$).toFixed(0);
 
 		return {
 			bloomingX$,
@@ -227,13 +224,12 @@ const melittaRecipe: IRecipeDTO<
 	minutes: 3.3,
 	pours: 1,
 	formula: (grounds, ratio) => {
-		const total = grounds * ratio;
+		const bloomingX$ = 0.2;
+		const blooming$ = (total * bloomingX$).toFixed(0);
+		const total = grounds * ratio - +blooming$;
 
 		const pour25$ = (total * 0.25).toFixed(0);
 		const pour12$ = (total * 0.125).toFixed(0);
-
-		const bloomingX$ = 0.125;
-		const blooming$ = (total * bloomingX$).toFixed(0);
 
 		return {
 			blooming$,
@@ -367,7 +363,7 @@ const coldBrewImmersionRecipe: IRecipeDTO<
 		serve: string;
 	}
 > = {
-	name: "cold brew immersion",
+	name: "cold brew",
 	methods: ["cold brew", "immersion"],
 	minutes: 720, // 12 hours for steeping
 	pours: 1,
@@ -425,13 +421,13 @@ const harioImmersionDripperSwitchRecipe: IRecipeDTO<
 		serve: string;
 	}
 > = {
-	name: "hario immersion dripper switch",
+	name: "dripper switch",
 	methods: ["immersion", "dripper"],
 	minutes: 4,
 	pours: 2,
 	formula: (grounds, ratio) => {
+		const bloom$ = total * 0.15;
 		const total = grounds * ratio;
-		const bloom$ = total * 0.15; // Bloom with 15% of the total water
 		const pour$ = total - bloom$;
 
 		return {
@@ -498,7 +494,7 @@ const v60IcedCoffeeJapaneseStyleRecipe: IRecipeDTO<
 		serve: string;
 	}
 > = {
-	name: "v60 iced coffee",
+	name: "iced coffee",
 	methods: ["v60", "iced coffee"],
 	minutes: 4,
 	pours: 1,
